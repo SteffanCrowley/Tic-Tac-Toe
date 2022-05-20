@@ -20,23 +20,18 @@ const gameBoard = (() => {
 //This module takes the inputs of 'click' and uses it to
 //manipulate the board array
 const playGame = (() => {
-  let board = ["X", "O", "X", "X", "O", "X", "X", "O", "X"];
+  let board = ["", "", "", "", "", "", "", "", ""];
 
-  gameBoard.makeBoard(board);
+  gameBoard.makeBoard(board); //creates initial board
 
+  //updates array index based on click, clears board,
+  //remakes it with new array index
   function placeMark(e) {
-    console.log(this.id);
-    board = ["X", "O", "X", "X", "O", "X", "X", "O", "O"];
-    deleteBoard();
-    gameBoard.makeBoard(board);
-    e.stopPropagation();
+    board[this.id] = "X";
+    document.getElementById(`${this.id}`).innerHTML = "O";
   }
 
+  //listens for clicks on the cards
   const divs = document.querySelectorAll(".card");
   divs.forEach((card) => card.addEventListener("click", placeMark));
 })();
-
-//function to clear the board(so it can be remade)
-function deleteBoard() {
-  document.getElementById("container").innerHTML = "";
-}
