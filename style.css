@@ -4,7 +4,7 @@
   font-family: sans-serif;
 }
 
-.board {
+.container {
   height: 1000px;
   display: grid;
   grid-template-rows: 200px 200px 200px;
@@ -20,4 +20,6 @@
   text-align: center;
   border: 1px solid grey;
   box-shadow: 2px 2px 2px black;
+  font-size: 11em;
+  font-weight: bold;
 }
