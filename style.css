@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.board {
+  height: 1000px;
+  display: grid;
+  grid-template-rows: 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px;
+  gap: 1px;
+  justify-content: center;
+  align-content: center;
+}
+
+.card {
+  background-color: blanchedalmond;
+  color: black;
+  text-align: center;
+  border: 1px solid grey;
+  box-shadow: 2px 2px 2px black;
+}
