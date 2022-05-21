@@ -57,28 +57,35 @@ const playGame = (() => {
   //remakes it with new array index
   function placeMark(e) {
     board[this.id] = player1.pointTurn();
-    winCondition(board);
-    // let turn =
     document.getElementById(`${this.id}`).innerHTML = player1.takeTurn();
+    winCondition(board);
   }
 
   function winCondition(board) {
     if (Math.abs(board[0] + board[1] + board[2]) == 3) {
-      console.log("win");
+      whoWon(player1.pointTurn());
     } else if (Math.abs(board[3] + board[4] + board[5]) == 3) {
-      console.log("win");
+      whoWon(player1.pointTurn());
     } else if (Math.abs(board[6] + board[7] + board[8]) == 3) {
-      console.log("win");
+      whoWon(player1.pointTurn());
     } else if (Math.abs(board[0] + board[3] + board[6]) == 3) {
-      console.log("win");
+      whoWon(player1.pointTurn());
     } else if (Math.abs(board[1] + board[4] + board[7]) == 3) {
-      console.log("win");
+      whoWon(player1.pointTurn());
     } else if (Math.abs(board[2] + board[5] + board[8]) == 3) {
-      console.log("win");
+      whoWon(player1.pointTurn());
     } else if (Math.abs(board[0] + board[4] + board[8]) == 3) {
-      console.log("win");
+      whoWon(player1.pointTurn());
     } else if (Math.abs(board[2] + board[4] + board[6]) == 3) {
-      console.log("win");
+      whoWon(player1.pointTurn());
+    }
+  }
+
+  function whoWon(lastMark) {
+    if (lastMark == 1) {
+      console.log("player 1 wins!  Mark X");
+    } else {
+      console.log("player 2 wins!  Mark O");
     }
   }
 
