@@ -1,5 +1,4 @@
-const Player = (marker) => {
-  const getMarker = () => marker;
+const Player = () => {
   let x = true;
   let y = true;
 
@@ -21,11 +20,10 @@ const Player = (marker) => {
     }
   };
 
-  return { getMarker, takeTurn, pointTurn };
+  return { takeTurn, pointTurn };
 };
 
-const player1 = Player("X");
-const player2 = Player("O");
+const player1 = Player();
 
 //This module creates the initial board
 const gameBoard = (() => {
