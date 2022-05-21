@@ -1,3 +1,32 @@
+const Player = (marker) => {
+  const getMarker = () => marker;
+  let x = true;
+  let y = true;
+
+  const takeTurn = () => {
+    x = !x;
+    if (x == true) {
+      return "O";
+    } else {
+      return "X";
+    }
+  };
+
+  const pointTurn = () => {
+    y = !y;
+    if (y == true) {
+      return 1;
+    } else {
+      return -1;
+    }
+  };
+
+  return { getMarker, takeTurn, pointTurn };
+};
+
+const player1 = Player("X");
+const player2 = Player("O");
+
 //This module creates the initial board
 const gameBoard = (() => {
   const container = document.querySelector(".container");
@@ -27,27 +56,28 @@ const playGame = (() => {
   //updates array index based on click, clears board,
   //remakes it with new array index
   function placeMark(e) {
-    board[this.id] = 1;
+    board[this.id] = player1.pointTurn();
     winCondition(board);
-    document.getElementById(`${this.id}`).innerHTML = "O";
+    // let turn =
+    document.getElementById(`${this.id}`).innerHTML = player1.takeTurn();
   }
 
   function winCondition(board) {
-    if (board[0] + board[1] + board[2] == 3) {
+    if (Math.abs(board[0] + board[1] + board[2]) == 3) {
       console.log("win");
-    } else if (board[3] + board[4] + board[5] == 3) {
+    } else if (Math.abs(board[3] + board[4] + board[5]) == 3) {
       console.log("win");
-    } else if (board[6] + board[7] + board[8] == 3) {
+    } else if (Math.abs(board[6] + board[7] + board[8]) == 3) {
       console.log("win");
-    } else if (board[0] + board[3] + board[6] == 3) {
+    } else if (Math.abs(board[0] + board[3] + board[6]) == 3) {
       console.log("win");
-    } else if (board[1] + board[4] + board[7] == 3) {
+    } else if (Math.abs(board[1] + board[4] + board[7]) == 3) {
       console.log("win");
-    } else if (board[2] + board[5] + board[8] == 3) {
+    } else if (Math.abs(board[2] + board[5] + board[8]) == 3) {
       console.log("win");
-    } else if (board[0] + board[4] + board[8] == 3) {
+    } else if (Math.abs(board[0] + board[4] + board[8]) == 3) {
       console.log("win");
-    } else if (board[2] + board[4] + board[6] == 3) {
+    } else if (Math.abs(board[2] + board[4] + board[6]) == 3) {
       console.log("win");
     }
   }
