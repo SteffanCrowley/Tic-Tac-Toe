@@ -57,7 +57,9 @@ const playGame = (() => {
     if (board[this.id] == "") {
       board[this.id] = player1.pointTurn();
       document.getElementById(`${this.id}`).innerHTML = player1.takeTurn();
-      winCondition(board);
+      setTimeout(function () {
+        winCondition(board);
+      });
     }
   }
 
@@ -83,11 +85,22 @@ const playGame = (() => {
 
   function whoWon(lastMark) {
     if (lastMark == 1) {
-      console.log("player 1 wins!  Mark X");
+      alert(name1 + " wins!");
     } else {
-      console.log("player 2 wins!  Mark O");
+      alert(name2 + " wins!");
     }
   }
+
+  let name1 = "";
+  let name2 = "";
+
+  const submitBtn = document.querySelector(".submit");
+
+  submitBtn.addEventListener("click", (event) => {
+    name1 = play1.value;
+    name2 = play2.value;
+    alert("Player 1 (X): " + name1 + "\n" + " Player 2 (O): " + name2);
+  });
 
   //listens for clicks on the cards
   const divs = document.querySelectorAll(".card");

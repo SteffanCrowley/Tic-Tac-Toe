@@ -9,6 +9,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 }
 
 .container {
@@ -31,7 +32,7 @@ body {
   font-weight: bold;
 }
 
-input {
+#reset {
   padding: 0.8rem 1.3rem;
   font-size: 1.3rem;
   background-color: blanchedalmond;
@@ -42,4 +43,22 @@ input {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.253);
   width: 160px;
   height: 50px;
+}
+
+#play1,
+#play2 {
+  padding: 0.8rem 1.3rem;
+  font-size: 1.3rem;
+  background-color: blanchedalmond;
+  border: 1px solid grey;
+  border-radius: 10px;
+  color: black;
+  letter-spacing: -1px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.253);
+  width: 100px;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
 }

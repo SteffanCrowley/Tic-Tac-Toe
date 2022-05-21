@@ -10,10 +10,23 @@
   <body>
     <script src="app.js" defer></script>
     <div class="container" id="container"></div>
-    <input
-      type="button"
-      value="RESET"
-      onClick="document.location.reload(true)"
-    />
+    <div class="menu">
+      <input
+        type="button"
+        value="RESET"
+        id="reset"
+        onClick="document.location.reload(true)"
+      />
+      <div>
+        <label for="play1">Player 1(X):</label>
+        <input type="text" name="play1" id="play1" />
+      </div>
+
+      <div>
+        <label for="play2">Player 2(O):</label>
+        <input type="text" name="play2" id="play2" />
+      </div>
+    </div>
+    <button class="submit" id="reset">SUBMIT</button>
   </body>
 </html>
