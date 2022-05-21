@@ -53,12 +53,14 @@ const gameBoard = (() => {
 const playGame = (() => {
   let board = ["", "", "", "", "", "", "", "", ""];
 
-  //updates array index based on click, clears board,
-  //remakes it with new array index
+  //updates array index based on click, takes turns and runs
+  //win condition function
   function placeMark(e) {
-    board[this.id] = player1.pointTurn();
-    document.getElementById(`${this.id}`).innerHTML = player1.takeTurn();
-    winCondition(board);
+    if (board[this.id] == "") {
+      board[this.id] = player1.pointTurn();
+      document.getElementById(`${this.id}`).innerHTML = player1.takeTurn();
+      winCondition(board);
+    }
   }
 
   function winCondition(board) {
