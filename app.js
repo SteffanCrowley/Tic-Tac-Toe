@@ -84,6 +84,19 @@ const playGame = (() => {
       whoWon(player1.pointTurn());
     } else if (Math.abs(board[2] + board[4] + board[6]) == 3) {
       whoWon(player1.pointTurn());
+    } else if (
+      Math.abs(board[0]) +
+        Math.abs(board[1]) +
+        Math.abs(board[2]) +
+        Math.abs(board[3]) +
+        Math.abs(board[4]) +
+        Math.abs(board[5]) +
+        Math.abs(board[6]) +
+        Math.abs(board[7]) +
+        Math.abs(board[8]) ==
+      9
+    ) {
+      alert(" Tie Game!");
     }
   }
 
