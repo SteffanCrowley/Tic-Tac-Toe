@@ -10,13 +10,12 @@
   <body>
     <script src="app.js" defer></script>
     <div class="container" id="container"></div>
+    <p>
+      Please enter the name of the players and then press 'submit' to begin the
+      game.
+    </p>
     <div class="menu">
-      <input
-        type="button"
-        value="RESET"
-        id="reset"
-        onClick="document.location.reload(true)"
-      />
+      <button class="submit" id="submit">SUBMIT</button>
       <div>
         <label for="play1">Player 1(X):</label>
         <input type="text" name="play1" id="play1" />
@@ -27,6 +26,11 @@
         <input type="text" name="play2" id="play2" />
       </div>
     </div>
-    <button class="submit" id="reset">SUBMIT</button>
+    <input
+      type="button"
+      value="RESET"
+      id="reset"
+      onClick="document.location.reload(true)"
+    />
   </body>
 </html>

@@ -54,12 +54,16 @@ const playGame = (() => {
   //updates array index based on click, takes turns and runs
   //win condition function
   function placeMark(e) {
-    if (board[this.id] == "") {
-      board[this.id] = player1.pointTurn();
-      document.getElementById(`${this.id}`).innerHTML = player1.takeTurn();
-      setTimeout(function () {
-        winCondition(board);
-      });
+    if (name1 == "" || name2 == "") {
+      alert("Please submit the player names!");
+    } else {
+      if (board[this.id] == "") {
+        board[this.id] = player1.pointTurn();
+        document.getElementById(`${this.id}`).innerHTML = player1.takeTurn();
+        setTimeout(function () {
+          winCondition(board);
+        });
+      }
     }
   }
 

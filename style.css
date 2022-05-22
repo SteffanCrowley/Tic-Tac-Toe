@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  height: 800px;
+  height: 700px;
   display: grid;
   grid-template-rows: 200px 200px 200px;
   grid-template-columns: 200px 200px 200px;
@@ -35,7 +35,20 @@ body {
 #reset {
   padding: 0.8rem 1.3rem;
   font-size: 1.3rem;
-  background-color: blanchedalmond;
+  background-color: rgb(255, 117, 117);
+  border: 1px solid grey;
+  border-radius: 10px;
+  color: black;
+  letter-spacing: -1px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.253);
+  width: 160px;
+  height: 50px;
+}
+
+#submit {
+  padding: 0.8rem 1.3rem;
+  font-size: 1.3rem;
+  background-color: rgb(255, 198, 113);
   border: 1px solid grey;
   border-radius: 10px;
   color: black;
@@ -49,7 +62,7 @@ body {
 #play2 {
   padding: 0.8rem 1.3rem;
   font-size: 1.3rem;
-  background-color: blanchedalmond;
+  background-color: rgb(255, 244, 228);
   border: 1px solid grey;
   border-radius: 10px;
   color: black;
